@@ -59,4 +59,13 @@ router.delete('/:id',async(req,res)=>{
     }
 })
 
+router.delete('/',async(req,res)=>{
+    try{
+        const result=await Emp.deleteMany({})
+        res.json(result)
+    }catch(err){
+        res.json(err)
+    }
+})
+
 module.exports = router
